@@ -1,0 +1,51 @@
+.products {
+    
+    width: 100%; /* Adjust width as needed */
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row */
+    justify-content: space-between; /* Distribute items evenly across the row */
+    position: relative;
+  }
+  
+  .product-name {
+    text-align: center;
+  }
+  
+  .main {
+    border: 1px solid red;
+    width: 23%; /* Adjust width to fit 4 items in a row with some margin */
+    margin-bottom: 20px; /* Add some bottom margin between rows */
+    
+  }
+  
+  .product-footer {
+    text-align: center;
+     margin-top: 10px; /* Add top margin to separate from product details */
+  }
+
+  .quantity-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-container input[type='text'] {
+    width: 30px;
+    text-align: center;
+    margin: 0 5px;
+  }
+  
+  .quantity-container button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .quantity-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  
