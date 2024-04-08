@@ -1,6 +1,6 @@
 import './App.css';
 import { Product } from './components/product';
-import  { CartContextProvider } from './context/cartcontext';
+import   CartContextProvider from './context/cartcontext';
 
 import { Cart } from './components/cart-component';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -10,14 +10,20 @@ function App() {
 
   return (
     
+
+      // <CartContextProvider>
+      //   <Product />
+      //   <Cart />
+      //   </CartContextProvider>
       <Router>
-      <CartContextProvider>
+      <CartContextProvider>  
         <Routes>
           <Route exact path='/' element={<Product />} />
           <Route path='/cart' element={<Cart />} />
         </Routes>
-        </CartContextProvider>
-      </Router>
+      </CartContextProvider>
+    </Router>
+     
    
   );
 }

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import './Product.scss';
 import productobj from './productobj';
-import { useContext } from 'react';
-import cartContext, { CartContextProvider, useCartContext } from '../../context/cartcontext';
+import  { useCartContext } from '../../context/cartcontext';
+import { Link } from 'react-router-dom';
 
 export default function Product() {
 
 
   const { cartItem, setCartItem } = useCartContext();
+  console.log("context",useCartContext());
 
   // State to manage quantity for each product
   const [quantities, setQuantities] = useState(productobj.map(() => 1));
@@ -59,8 +60,13 @@ export default function Product() {
     }
   };
 
+  const handleGotoCart = () =>{
+    <Link to={'/cart'}></Link>
+  }
+
   return (
     <div className='products'>
+    <div className='product-main'>
       {productobj.map((product, index) => (
         <div key={index} className='main'>
           <h3 className='product-name'>Products with id = {product.id}</h3>
@@ -78,6 +84,10 @@ export default function Product() {
           </div>
         </div>
       ))}
+      </div>
+      <div className='goto_cart'>
+        <Link to="/cart">Goto Cart</Link>
+      </div>
     </div>
   );
 }

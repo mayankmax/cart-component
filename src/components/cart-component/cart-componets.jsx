@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './cart.scss';
-import cartContext, { CartContextProvider, useCartContext } from '../../context/cartcontext';
-import { useContext } from 'react';
+import { useCartContext } from '../../context/cartcontext';
+
 import useApiCall from '../../customHooks/ApiHook';
 
 export default function Cart() {
@@ -9,11 +9,9 @@ export default function Cart() {
   const [totalprice, setTotalPrice] = useState(0);
 
   const { cartItem , setCartItem} = useCartContext();
+
   
 
-  useEffect(()=>{
-      console.log("Cart Item:",cartItem);
-  },[cartItem])
 
   const cartKey = Object.keys(cartItem);
 
